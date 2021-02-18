@@ -58,7 +58,7 @@
     const render = (products) => {
         const productsList = products.map(item => renderproduct(item.name, item.id, item.price));
         document.querySelector('.contain-goods').innerHTML = productsList.join("");//join убирает запятые
-
+        //не получилось почему-то через getelementsbyclassname, не выводилась страница, хотя в консоль выводились результаты.
     };
 
     render(data);
