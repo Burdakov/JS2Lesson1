@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MarketBest</title>
+
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class=contain>
+        <div class=contain-header>Best Market</div>
+
+        <div class=contain-bin>cart</div>
+
+        <div class=contain-goods>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    const data = [{
+            name: 'BMW',
+            id: 1,
+            price: 100
+        },
+        {
+            name: 'Mercedes-Benz',
+            id: 2,
+            price: 110
+        },
+        {
+            name: 'Porsche',
+            id: 3,
+            price: 120
+        },
+        {
+            name: 'Audi',
+            id: 4,
+            price: 90
+        },
+    ]
+
+    const renderproduct = (name = 'NA', id = -999, price = 'NA') => {
+        return `
+            <div class=contain-goods__descr> ${name} just for ${price}K USD
+                <div class=contain-goods__but> buy!</div>
+            </div>`
+    };
+
+    const render = (products) => {
+        const productsList = products.map(item => renderproduct(item.name, item.id, item.price));
+        document.querySelector('.contain-goods').innerHTML = productsList.join("");//join убирает запятые
+
+        console.log(productsList);
+        console.log(document.getElementsByClassName('contain-goods'));
+    };
+
+    render(data);
+
+</script>
+
+
+</html>
