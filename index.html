@@ -59,8 +59,6 @@
         const productsList = products.map(item => renderproduct(item.name, item.id, item.price));
         document.querySelector('.contain-goods').innerHTML = productsList.join("");//join убирает запятые
 
-        console.log(productsList);
-        console.log(document.getElementsByClassName('contain-goods'));
     };
 
     render(data);
